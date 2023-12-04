@@ -1,0 +1,19 @@
+{
+  "name": "polyworld",
+  "version": "1.0.0",
+  "description": "The first PolyWorld Studio project by the studio founders",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WyattHPearce/PolyWorld.git"
+  },
+  "author": "Wyatt Pearce",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WyattHPearce/PolyWorld/issues"
+  },
+  "homepage": "https://github.com/WyattHPearce/PolyWorld#readme"
+}
