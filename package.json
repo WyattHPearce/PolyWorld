@@ -2,18 +2,21 @@
   "name": "polyworld",
   "version": "1.0.0",
   "description": "The first PolyWorld Studio project by the studio founders",
-  "main": "index.js",
+  "author": "Wyatt Pearce",
+  "license": "MIT",
+  "main": "src/server.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node src/server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/WyattHPearce/PolyWorld.git"
   },
-  "author": "Wyatt Pearce",
-  "license": "MIT",
+  "homepage": "https://github.com/WyattHPearce/PolyWorld#readme",
   "bugs": {
     "url": "https://github.com/WyattHPearce/PolyWorld/issues"
   },
-  "homepage": "https://github.com/WyattHPearce/PolyWorld#readme"
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
