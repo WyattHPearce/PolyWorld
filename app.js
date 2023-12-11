@@ -1,27 +1,20 @@
-// Node utility imports
-const path = require('path'); // Import the 'path' module
-
-// Server imports
 const express = require('express');               // Importing the Express module
 const app = express();                            // Creating an instance of Express
 const server = require('http').createServer(app); // Create HTTP server instance from express
 const io = require('socket.io')(server);          // Initialize Socket.io with the HTTP server
 const port = 3000;                                // Setting the port number
+const path = require('path');                     // Import the 'path' module
 
-// Express Middleware
-app.get('/', function (req, res) {
+// Routes
+app.use(express.static(path.join(__dirname, 'client')));
+app.get('/', function(req, res, next){
+    console.log(req);
     res.sendFile(path.join(__dirname, 'client', 'index.html'));
 });
-app.use(express.static(path.join(__dirname, 'client')));
 
-// Socket.IO communication
-io.on('connect', function(socket) {
-    console.log(`Connection recived. Client ID: ${socket.id}`);
-
-    socket.on("disconnect", function() {
-        console.log(`Connection terminated. Client ID: ${socket.id}`);
-    });
-});
+// Socket.IO
+const sockets = require('./server/sockets');
+io.on('connect', sockets.handleConnection);
 
 // Starting server
 server.listen(port, () => {

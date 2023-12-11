@@ -5,4 +5,6 @@ export function setupSocket(){
   socket.on('connect', () => {
     console.log(`Current sockets client ID: ${socket.id}`);
   });
+
+  socket.emit('happy');
 }
