@@ -6,11 +6,11 @@ const port = 3000;                                // Setting the port number
 const path = require('path');                     // Import the 'path' module
 
 // Routes
-app.use(express.static(path.join(__dirname, 'client')));
 app.get('/', function(req, res, next){
-    console.log(req);
     res.sendFile(path.join(__dirname, 'client', 'index.html'));
 });
+app.use(express.static(path.join(__dirname, 'client')));
+
 
 // Socket.IO
 const sockets = require('./server/sockets');
