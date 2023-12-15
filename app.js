@@ -20,4 +20,3 @@ io.on('connect', sockets.handleConnection);
 server.listen(port, () => {
     console.log(`Express server with Socket.IO is running on port: ${port}`);
 });
-
