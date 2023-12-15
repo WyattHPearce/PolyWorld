@@ -1,10 +1,14 @@
-// Start the Socket.IO connection to the server
-export function setupSocket(){
-  const socket = io();
+const socket = io();
 
-  socket.on('connect', () => {
-    console.log(`Current sockets client ID: ${socket.id}`);
-  });
+socket.on("connect", () => {
+  console.log(`Current sockets client ID: ${socket.id}`);
+  happy(socket);
+});
 
-  socket.emit('happy');
+function happy(socket) {
+  let data = {
+    reason: "Im understanding sockets!",
+  };
+  socket.emit("happy", data);
+  console.log(`Told the server I'm happy because ${data.reason}!`);
 }
