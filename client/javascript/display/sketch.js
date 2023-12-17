@@ -1,11 +1,20 @@
 function setup() {
   createCanvas(500, 500);
   rectMode(CENTER);
+  background(200);
 }
 
 function draw() {
-  background(200);
   noStroke();
   fill(90);
-  rect(mouseX, mouseY, 50, 50);
+}
+
+function mouseDragged(){
+  let data = {
+    mouseX: mouseX,
+    mouseY: mouseY
+  };
+  socket.emit("mouse", data);
+  fill(0);
+  rect(mouseX, mouseY, 10, 10);
 }
