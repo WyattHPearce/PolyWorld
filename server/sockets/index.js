@@ -1,8 +1,12 @@
 function handleConnection(socket) {
     console.log(`Connection Recieved - Socket ID: ${socket.id}`);
 
-    socket.on("happy", function(data){
-        console.log(`"Happy" recived by ${socket.id}, for reason: ${data.reason}`);
+    socket.on("mouse", (data) => {
+        console.log(`MouseX: ${data.mouseX}, MouseY: ${data.mouseY}`);
+        socket.broadcast.emit('draw', {
+            x: data.mouseX,
+            y: data.mouseY
+        });
     });
 
     socket.on("disconnect", function() {

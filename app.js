@@ -1,8 +1,9 @@
 const express = require('express');               // Importing the Express module
 const app = express();                            // Creating an instance of Express
 const server = require('http').createServer(app); // Create HTTP server instance from express
-const io = require('socket.io')(server);          // Initialize Socket.io with the HTTP server
-const port = 3000;                                // Setting the port number
+const socket = require('socket.io');          // Initialize Socket.io with the HTTP server
+const io = socket(server);
+const port = process.env.PORT || 3000;                                // Setting the port number
 const path = require('path');                     // Import the 'path' module
 
 // Routes
