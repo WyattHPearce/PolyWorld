@@ -1,6 +1,9 @@
-html, body {
+body {
     margin: 0;
-    padding: 0;
-    background-color: white;
-    overflow: hidden; /* Disable scrolling */
+    overflow: hidden;
+}
+
+#drawspace {
+    background: white;
+    display: block;
 }
